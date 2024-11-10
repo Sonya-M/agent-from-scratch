@@ -1,15 +1,11 @@
+import type { AIMessage } from '../types'
 import { openai } from './ai'
 
-export async function runLLM({ userMessage }: { userMessage: string }) {
+export async function runLLM({ messages }: { messages: AIMessage[] }) {
   const response = await openai.chat.completions.create({
     model: 'gpt-4o-mini',
     temperature: 0.1,
-    messages: [
-      {
-        role: 'user',
-        content: userMessage,
-      },
-    ],
+    messages,
   })
   return response.choices[0].message.content
 }
