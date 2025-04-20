@@ -1,4 +1,5 @@
 Example session from db.json:
+
 ```json
 {
   "messages": [
@@ -50,3 +51,9 @@ Example session from db.json:
   ]
 }
 ```
+
+## why we need agent loops?
+
+- in order to feed the response from a tool call back to the llm so it could answer the original question with a message having role == 'assistant' and content == 'whatever the tool returned' (see current db.json state)
+- otherwise it would just call the tool and stop
+- we want to feed the tool response message back to the llm the same way we feed user msgs to it
