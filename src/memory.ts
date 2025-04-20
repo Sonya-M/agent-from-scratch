@@ -25,7 +25,8 @@ export function removeMetadata(message: MessageWithMetadata) {
 
 const defaultData: Data = { messages: [] }
 export async function getDb() {
-  const db = await JSONFilePreset<Data>('../db.json', defaultData)
+  // note that the file name is not the actual path - didn't work with '../db.json'
+  const db = await JSONFilePreset<Data>('db.json', defaultData)
   return db
 }
 
@@ -38,4 +39,18 @@ export async function addMessages(messages: AIMessage[]) {
 export async function getMessages() {
   const db = await getDb()
   return db.data.messages.map(removeMetadata)
+}
+
+export async function saveToolResponse(
+  toolCallId: string,
+  toolResponse: string
+) {
+  return await addMessages([
+    {
+      // your answer to the tool call
+      role: 'tool',
+      content: toolResponse,
+      tool_call_id: toolCallId,
+    },
+  ])
 }

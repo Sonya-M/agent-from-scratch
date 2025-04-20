@@ -1,3 +1,5 @@
+Example session from db.json:
+```json
 {
   "messages": [
     {
@@ -47,3 +49,4 @@
     }
   ]
 }
+```
