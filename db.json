@@ -3,78 +3,47 @@
     {
       "role": "user",
       "content": "what's the weather",
-      "id": "b018dee7-8d8a-48e6-9cda-a09b3b19f3cf",
-      "createdAt": "2025-04-20T18:45:41.124Z"
+      "id": "51a3d2e8-4fa2-49fc-8460-f53a78692f13",
+      "createdAt": "2025-04-20T18:56:04.339Z"
     },
     {
       "role": "assistant",
       "content": "Could you please specify the location for which you would like to know the weather?",
       "refusal": null,
       "annotations": [],
-      "id": "74d749fa-46bf-4e36-a57a-3bc052131e50",
-      "createdAt": "2025-04-20T18:45:42.426Z"
+      "id": "0bd7ad68-bc15-4886-b80e-a0170d672a41",
+      "createdAt": "2025-04-20T18:56:05.633Z"
     },
     {
       "role": "user",
       "content": "ny",
-      "id": "7f617578-a2d5-4004-984b-faafda0db73b",
-      "createdAt": "2025-04-20T18:45:50.314Z"
+      "id": "2370001d-926c-43dc-9405-b8db3a3c424c",
+      "createdAt": "2025-04-20T18:56:12.425Z"
     },
     {
       "role": "assistant",
       "content": null,
       "tool_calls": [
         {
-          "id": "call_dkyPlVwVNAFRj36Wdr7soGPI",
+          "id": "call_Mg0272o9dISyCGWaOUyCkUX1",
           "type": "function",
           "function": {
             "name": "get_weather",
-            "arguments": "{\"reasoning\":\"To provide the current weather for New York.\"}"
+            "arguments": "{\"reasoning\":\"To provide the current weather information for New York.\"}"
           }
         }
       ],
       "refusal": null,
       "annotations": [],
-      "id": "56da5ad2-be85-450d-a115-ef4cf647ec33",
-      "createdAt": "2025-04-20T18:45:51.642Z"
+      "id": "e0c41eb4-3ad4-4e73-b203-f52642118fcc",
+      "createdAt": "2025-04-20T18:56:13.827Z"
     },
     {
       "role": "tool",
       "content": "hot, 90deg",
-      "tool_call_id": "call_dkyPlVwVNAFRj36Wdr7soGPI",
-      "id": "ba9b7282-12fd-46e5-be02-eb703b0bb809",
-      "createdAt": "2025-04-20T18:45:51.644Z"
-    },
-    {
-      "role": "user",
-      "content": "what's the weather",
-      "id": "162adf18-295f-45f0-935e-4e0c8b6496cd",
-      "createdAt": "2025-04-20T18:46:10.756Z"
-    },
-    {
-      "role": "assistant",
-      "content": null,
-      "tool_calls": [
-        {
-          "id": "call_0Fjdx62YLz6v7vmBIaLeQoWC",
-          "type": "function",
-          "function": {
-            "name": "test_tool",
-            "arguments": "{\"reasoning\":\"To verify the accuracy of the weather information provided.\"}"
-          }
-        }
-      ],
-      "refusal": null,
-      "annotations": [],
-      "id": "90d83355-cf8e-4026-b9f4-3622d456b97b",
-      "createdAt": "2025-04-20T18:46:12.229Z"
-    },
-    {
-      "role": "tool",
-      "content": "I am just a test tool",
-      "tool_call_id": "call_0Fjdx62YLz6v7vmBIaLeQoWC",
-      "id": "1593469b-f050-4d32-a187-8254201bff42",
-      "createdAt": "2025-04-20T18:46:12.230Z"
+      "tool_call_id": "call_Mg0272o9dISyCGWaOUyCkUX1",
+      "id": "f481a2da-3b71-4282-8257-6d359710b6aa",
+      "createdAt": "2025-04-20T18:56:13.828Z"
     }
   ]
 }

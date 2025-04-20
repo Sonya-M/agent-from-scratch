@@ -38,14 +38,12 @@ export async function runAgent({
   if (response.tool_calls) {
     // console.log(response.tool_calls)
     // for parallel calls, you have to loop over tool_calls, here it's enough to take the first element
-    await Promise.all(
-      response.tool_calls?.map(async (funcCall) => {
-        loader.update(`executing ${funcCall.function.name}`)
-        const result = await runTool(funcCall, userMessage)
-        await saveToolResponse(funcCall.id, result)
-        loader.update(`done ${funcCall.function.name}`)
-      })
-    )
+    const funcCall = response.tool_calls?.at(0)
+    if (!funcCall) return
+    loader.update(`executing ${funcCall.function.name}`)
+    const result = await runTool(funcCall, userMessage)
+    await saveToolResponse(funcCall.id, result)
+    loader.update(`done ${funcCall.function.name}`)
   }
   loader.stop()
   logMessage(response)
