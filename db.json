@@ -2,81 +2,67 @@
   "messages": [
     {
       "role": "user",
-      "content": "what's the weather",
-      "id": "54fed272-d6ec-4312-baf0-8218439da83c",
-      "createdAt": "2025-04-20T20:19:53.244Z"
-    },
-    {
-      "role": "assistant",
-      "content": "Could you please specify the location for which you would like to know the weather?",
-      "refusal": null,
-      "annotations": [],
-      "id": "e99386e4-24e4-4186-ba6e-1702292bfcc7",
-      "createdAt": "2025-04-20T20:19:55.051Z"
-    },
-    {
-      "role": "user",
-      "content": "ny",
-      "id": "bb9a0f03-758f-4e88-a3d6-649ac2cfeb35",
-      "createdAt": "2025-04-20T20:20:18.117Z"
+      "content": "make me a meme image from a random dad joke",
+      "id": "4c538ee9-8e9e-466d-9dc9-85f006e228e4",
+      "createdAt": "2025-04-20T21:18:47.841Z"
     },
     {
       "role": "assistant",
       "content": null,
       "tool_calls": [
         {
-          "id": "call_Faz3XKSDu90RFIoDeAJJqeAD",
+          "id": "call_hOPjOeKf7W4eig4SfkVrDgOK",
           "type": "function",
           "function": {
-            "name": "get_weather",
-            "arguments": "{\"reasoning\":\"To provide the current weather information for New York.\"}"
+            "name": "dad_joke",
+            "arguments": "{}"
           }
         }
       ],
       "refusal": null,
       "annotations": [],
-      "id": "36e33200-93dc-4176-b4d5-e8a07da1d7d7",
-      "createdAt": "2025-04-20T20:20:19.622Z"
+      "id": "01c45c5b-fc06-4465-a3be-ebabbd784a61",
+      "createdAt": "2025-04-20T21:18:48.456Z"
     },
     {
       "role": "tool",
-      "content": "hot, 90deg",
-      "tool_call_id": "call_Faz3XKSDu90RFIoDeAJJqeAD",
-      "id": "866cd382-3ab7-4079-8860-494b2722785c",
-      "createdAt": "2025-04-20T20:20:19.624Z"
+      "content": "Why did the opera singer go sailing? They wanted to hit the high Cs.",
+      "tool_call_id": "call_hOPjOeKf7W4eig4SfkVrDgOK",
+      "id": "7b6ad762-fdb1-442f-8db9-38176ac82d92",
+      "createdAt": "2025-04-20T21:18:48.676Z"
     },
     {
       "role": "assistant",
       "content": null,
       "tool_calls": [
         {
-          "id": "call_GEMd3wzKYijN4JaGrscgSfGe",
+          "id": "call_aPlv7R59x9kbSVPe5Gt3C7tZ",
           "type": "function",
           "function": {
-            "name": "test_tool",
-            "arguments": "{\"reasoning\":\"To verify the accuracy of the weather information provided.\"}"
+            "name": "generate_image",
+            "arguments": "{\"prompt\":\"A humorous meme image featuring the dad joke: 'Why did the opera singer go sailing? They wanted to hit the high Cs.' The image should depict an opera singer in a dramatic pose on a sailboat, with musical notes and waves around them, conveying a lighthearted and funny atmosphere.\"}"
           }
         }
       ],
       "refusal": null,
       "annotations": [],
-      "id": "1d977c4b-f060-467d-ba6b-ca1bb1acd62c",
-      "createdAt": "2025-04-20T20:20:20.280Z"
+      "id": "393e5d8d-0ecd-437a-a093-cae716d94c13",
+      "createdAt": "2025-04-20T21:18:49.923Z"
     },
     {
       "role": "tool",
-      "content": "I am just a test tool",
-      "tool_call_id": "call_GEMd3wzKYijN4JaGrscgSfGe",
-      "id": "be45e235-8cb0-4355-a34a-7f87b4465d47",
-      "createdAt": "2025-04-20T20:20:20.282Z"
+      "content": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-zdhSzTRHEbvIkRg9IvX2aXJ4/user-w4NfXVK2YYlJkMj176lNYtDI/img-DkUm74M0LABmQBiv2ftgFagB.png?st=2025-04-20T20%3A19%3A04Z&se=2025-04-20T22%3A19%3A04Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-20T20%3A10%3A19Z&ske=2025-04-21T20%3A10%3A19Z&sks=b&skv=2024-08-04&sig=WdqQl4eNcodeAM7ZObAi0U1AcvExqZ6vGRcabNReyDE%3D",
+      "tool_call_id": "call_aPlv7R59x9kbSVPe5Gt3C7tZ",
+      "id": "307d303f-5285-4442-ad7d-9ccfe5f107bf",
+      "createdAt": "2025-04-20T21:19:04.211Z"
     },
     {
       "role": "assistant",
-      "content": "The current weather in New York is hot, with a temperature of 90 degrees. If you need more specific details or a forecast, let me know!",
+      "content": "Here's a meme image featuring the dad joke: \"Why did the opera singer go sailing? They wanted to hit the high Cs.\"\n\n![Meme Image](https://oaidalleapiprodscus.blob.core.windows.net/private/org-zdhSzTRHEbvIkRg9IvX2aXJ4/user-w4NfXVK2YYlJkMj176lNYtDI/img-DkUm74M0LABmQBiv2ftgFagB.png?st=2025-04-20T20%3A19%3A04Z&se=2025-04-20T22%3A19%3A04Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-20T20%3A10%3A19Z&ske=2025-04-21T20%3A10%3A19Z&sks=b&skv=2024-08-04&sig=WdqQl4eNcodeAM7ZObAi0U1AcvExqZ6vGRcabNReyDE%3D)\n\nEnjoy!",
       "refusal": null,
       "annotations": [],
-      "id": "70a840b8-43d7-4ea7-bb74-efbf7e280e23",
-      "createdAt": "2025-04-20T20:20:21.357Z"
+      "id": "2fad8bfe-da59-4194-be0f-26e9b65e6a64",
+      "createdAt": "2025-04-20T21:19:08.157Z"
     }
   ]
 }
