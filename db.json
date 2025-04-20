@@ -3,29 +3,29 @@
     {
       "role": "user",
       "content": "what's the weather",
-      "id": "51a3d2e8-4fa2-49fc-8460-f53a78692f13",
-      "createdAt": "2025-04-20T18:56:04.339Z"
+      "id": "54fed272-d6ec-4312-baf0-8218439da83c",
+      "createdAt": "2025-04-20T20:19:53.244Z"
     },
     {
       "role": "assistant",
       "content": "Could you please specify the location for which you would like to know the weather?",
       "refusal": null,
       "annotations": [],
-      "id": "0bd7ad68-bc15-4886-b80e-a0170d672a41",
-      "createdAt": "2025-04-20T18:56:05.633Z"
+      "id": "e99386e4-24e4-4186-ba6e-1702292bfcc7",
+      "createdAt": "2025-04-20T20:19:55.051Z"
     },
     {
       "role": "user",
       "content": "ny",
-      "id": "2370001d-926c-43dc-9405-b8db3a3c424c",
-      "createdAt": "2025-04-20T18:56:12.425Z"
+      "id": "bb9a0f03-758f-4e88-a3d6-649ac2cfeb35",
+      "createdAt": "2025-04-20T20:20:18.117Z"
     },
     {
       "role": "assistant",
       "content": null,
       "tool_calls": [
         {
-          "id": "call_Mg0272o9dISyCGWaOUyCkUX1",
+          "id": "call_Faz3XKSDu90RFIoDeAJJqeAD",
           "type": "function",
           "function": {
             "name": "get_weather",
@@ -35,15 +35,48 @@
       ],
       "refusal": null,
       "annotations": [],
-      "id": "e0c41eb4-3ad4-4e73-b203-f52642118fcc",
-      "createdAt": "2025-04-20T18:56:13.827Z"
+      "id": "36e33200-93dc-4176-b4d5-e8a07da1d7d7",
+      "createdAt": "2025-04-20T20:20:19.622Z"
     },
     {
       "role": "tool",
       "content": "hot, 90deg",
-      "tool_call_id": "call_Mg0272o9dISyCGWaOUyCkUX1",
-      "id": "f481a2da-3b71-4282-8257-6d359710b6aa",
-      "createdAt": "2025-04-20T18:56:13.828Z"
+      "tool_call_id": "call_Faz3XKSDu90RFIoDeAJJqeAD",
+      "id": "866cd382-3ab7-4079-8860-494b2722785c",
+      "createdAt": "2025-04-20T20:20:19.624Z"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_GEMd3wzKYijN4JaGrscgSfGe",
+          "type": "function",
+          "function": {
+            "name": "test_tool",
+            "arguments": "{\"reasoning\":\"To verify the accuracy of the weather information provided.\"}"
+          }
+        }
+      ],
+      "refusal": null,
+      "annotations": [],
+      "id": "1d977c4b-f060-467d-ba6b-ca1bb1acd62c",
+      "createdAt": "2025-04-20T20:20:20.280Z"
+    },
+    {
+      "role": "tool",
+      "content": "I am just a test tool",
+      "tool_call_id": "call_GEMd3wzKYijN4JaGrscgSfGe",
+      "id": "be45e235-8cb0-4355-a34a-7f87b4465d47",
+      "createdAt": "2025-04-20T20:20:20.282Z"
+    },
+    {
+      "role": "assistant",
+      "content": "The current weather in New York is hot, with a temperature of 90 degrees. If you need more specific details or a forecast, let me know!",
+      "refusal": null,
+      "annotations": [],
+      "id": "70a840b8-43d7-4ea7-bb74-efbf7e280e23",
+      "createdAt": "2025-04-20T20:20:21.357Z"
     }
   ]
 }

@@ -27,27 +27,31 @@ export async function runAgent({
 }) {
   await addMessages([{ role: 'user', content: userMessage }])
   const loader = showLoader('Processing...')
-  const history = await getMessages()
-  const response = await runLLM({ messages: history, tools })
-  console.log({ history })
-  await addMessages([response]) // this might be the tool call
 
-  // with openai, it's response has either tool_calls or content field, never both;
-  // response.content means you got to the final answer, the loop is done
-  // you may also want to check the stop reason property
-  if (response.tool_calls) {
-    // console.log(response.tool_calls)
-    // for parallel calls, you have to loop over tool_calls, here it's enough to take the first element
-    const funcCall = response.tool_calls?.at(0)
-    if (!funcCall) return
-    loader.update(`executing ${funcCall.function.name}`)
-    const result = await runTool(funcCall, userMessage)
-    await saveToolResponse(funcCall.id, result)
-    loader.update(`done ${funcCall.function.name}`)
+  while (true) {
+    const history = await getMessages()
+    const response = await runLLM({ messages: history, tools })
+    // console.log({ history })
+    await addMessages([response]) // this might be the tool call
+
+    if (response.content) {
+      loader.stop()
+      logMessage(response)
+      return getMessages()
+    }
+
+    // with openai, it's response has either tool_calls or content field, never both;
+    // response.content means you got to the final answer, the loop is done
+    // you may also want to check the stop reason property
+    if (response.tool_calls) {
+      // console.log(response.tool_calls)
+      // for parallel calls, you have to loop over tool_calls, here it's enough to take the first element
+      const funcCall = response.tool_calls?.at(0)
+      if (!funcCall) return
+      loader.update(`executing ${funcCall.function.name}`)
+      const result = await runTool(funcCall, userMessage)
+      await saveToolResponse(funcCall.id, result)
+      loader.update(`done ${funcCall.function.name}`)
+    }
   }
-  loader.stop()
-  logMessage(response)
-  const msgs = await getMessages()
-  console.log({ msgs })
-  return msgs
 }
